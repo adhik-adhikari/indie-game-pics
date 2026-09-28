@@ -1,0 +1,17 @@
+{
+  "name": "indie-games-listicle",
+  "version": "1.0.0",
+  "description": "WEB103 Project 1 - Indie Games Listicle using Express and PicoCSS",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["express", "listicle", "indie-games", "web103"],
+  "author": "Adhik (Member ID: 136354)",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
