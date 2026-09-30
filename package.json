@@ -1,17 +1,26 @@
 {
   "name": "indie-games-listicle",
-  "version": "1.0.0",
-  "description": "WEB103 Project 1 - Indie Games Listicle using Express and PicoCSS",
-  "main": "server.js",
+  "version": "2.0.0",
+  "description": "WEB103 Project 2 - Indie Games Listicle with PostgreSQL database",
+  "main": "server/server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
+    "start": "node server/server.js",
+    "dev": "node server/server.js",
+    "seed": "psql $DATABASE_URL -f server/config/seed.sql"
   },
-  "keywords": ["express", "listicle", "indie-games", "web103"],
+  "keywords": [
+    "express",
+    "listicle",
+    "indie-games",
+    "web103",
+    "postgresql"
+  ],
   "author": "Adhik (Member ID: 136354)",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "express": "^4.18.2"
+    "dotenv": "^18.0.4",
+    "express": "^4.18.2",
+    "pg": "^8.23.0"
   }
 }

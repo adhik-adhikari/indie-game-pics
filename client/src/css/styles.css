@@ -1,0 +1,422 @@
+/* client/src/css/styles.css */
+/* Custom styles on top of PicoCSS — Project 2 */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ----------------------------------------------------------------
+   Design Tokens
+---------------------------------------------------------------- */
+:root {
+  --accent:      #e67e22;
+  --accent-dark: #d35400;
+  --muted:       #7f8c8d;
+  --border:      #ddd;
+  --card-bg:     #fff;
+  --hero-bg:     #1a1a2e;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* ----------------------------------------------------------------
+   Navigation
+---------------------------------------------------------------- */
+header {
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+}
+
+header nav strong a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+header nav a {
+  text-decoration: none;
+}
+
+/* ----------------------------------------------------------------
+   Hero
+---------------------------------------------------------------- */
+.hero {
+  background: var(--hero-bg);
+  color: white;
+  padding: 2.5rem 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  text-align: center;
+  border-left: 5px solid var(--accent);
+}
+
+.hero h1 {
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  color: #bbb;
+  margin-bottom: 0;
+}
+
+.hero-sub {
+  color: #999;
+  font-size: 0.95rem;
+  margin-top: 0.75rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ----------------------------------------------------------------
+   Search (Stretch Feature)
+---------------------------------------------------------------- */
+.search-wrap {
+  margin-top: 1.25rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-wrap input[type="search"] {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  font-size: 0.95rem;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.search-wrap input[type="search"]::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+.search-wrap input[type="search"]:focus {
+  border-color: var(--accent);
+  background: rgba(255,255,255,0.15);
+}
+
+/* ----------------------------------------------------------------
+   Section heading + list
+---------------------------------------------------------------- */
+.section-title {
+  font-size: 1.2rem;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.games-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ----------------------------------------------------------------
+   Game Card
+---------------------------------------------------------------- */
+.game-card {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  background: var(--card-bg);
+  transition: box-shadow 0.2s, transform 0.15s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.game-card:hover {
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.13);
+  transform: translateY(-2px);
+}
+
+@media (prefers-color-scheme: dark) {
+  .game-card {
+    background: #111;
+    border-color: #333;
+  }
+}
+
+.game-card-image {
+  width: 120px;
+  height: 160px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #eee;
+  flex-shrink: 0;
+}
+
+.game-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.game-card-info hgroup {
+  margin-bottom: 0.4rem;
+}
+
+.game-card-info hgroup h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.1rem;
+}
+
+.game-card-info hgroup p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.game-description {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0.5rem 0 0.9rem;
+  line-height: 1.6;
+}
+
+/* ----------------------------------------------------------------
+   Stars & Badge
+---------------------------------------------------------------- */
+.stars {
+  color: var(--accent);
+  font-size: 1rem;
+  display: inline-block;
+  margin-bottom: 0.4rem;
+}
+
+.stars small {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-left: 4px;
+}
+
+.badge {
+  display: inline-block;
+  background: #f0f0f0;
+  color: #444;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.1rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .badge {
+    background: #222;
+    color: #ccc;
+    border-color: #444;
+  }
+}
+
+/* ----------------------------------------------------------------
+   Detail Page
+---------------------------------------------------------------- */
+.back-link {
+  margin-bottom: 1.25rem;
+}
+
+.back-link a {
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.back-link a:hover {
+  color: var(--accent);
+}
+
+.game-detail {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.75rem;
+  background: var(--card-bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  .game-detail {
+    background: #111;
+    border-color: #333;
+  }
+}
+
+.game-detail-header {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 1.75rem;
+  align-items: start;
+  margin-bottom: 2rem;
+}
+
+.game-detail-image {
+  width: 180px;
+  height: 240px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #eee;
+}
+
+.game-detail-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.game-detail-meta hgroup h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.2rem;
+}
+
+.game-detail-meta hgroup p.subtitle {
+  color: var(--muted);
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+}
+
+.detail-rating {
+  margin-bottom: 1rem;
+}
+
+.detail-rating .stars {
+  font-size: 1.2rem;
+}
+
+.detail-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.detail-table td {
+  padding: 0.45rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.detail-table td:first-child {
+  width: 110px;
+  color: var(--muted);
+}
+
+@media (prefers-color-scheme: dark) {
+  .detail-table td {
+    border-color: #333;
+  }
+}
+
+.game-detail-body {
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .game-detail-body {
+    border-color: #333;
+  }
+}
+
+.game-detail-body h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+}
+
+.game-detail-body blockquote {
+  border-left: 4px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--muted);
+  font-style: italic;
+  margin: 0;
+}
+
+/* ----------------------------------------------------------------
+   Loading state
+---------------------------------------------------------------- */
+.loading {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--muted);
+}
+
+/* ----------------------------------------------------------------
+   No results
+---------------------------------------------------------------- */
+.no-results {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: var(--muted);
+}
+
+.no-results p {
+  font-size: 1.1rem;
+}
+
+/* ----------------------------------------------------------------
+   404 / Error page
+---------------------------------------------------------------- */
+.error-page {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.error-code {
+  font-size: 6rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.error-page h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.error-page p {
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+/* ----------------------------------------------------------------
+   Footer
+---------------------------------------------------------------- */
+footer {
+  margin-top: 3rem;
+  padding-bottom: 1rem;
+}
+
+footer p {
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* ----------------------------------------------------------------
+   Responsive
+---------------------------------------------------------------- */
+@media (max-width: 600px) {
+  .game-card {
+    grid-template-columns: 1fr;
+  }
+
+  .game-card-image {
+    width: 100%;
+    height: 180px;
+  }
+
+  .game-detail-header {
+    grid-template-columns: 1fr;
+  }
+
+  .game-detail-image {
+    width: 100%;
+    height: 220px;
+  }
+}

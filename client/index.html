@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A curated listicle of the best indie video games you should play right now. Discover hidden gems and beloved classics!" />
+  <title>Home | Indie Game Picks 🎮</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+  <link rel="stylesheet" href="/src/css/styles.css" />
+</head>
+<body>
+  <header class="container">
+    <nav>
+      <ul>
+        <li><strong><a href="/" id="nav-home-link">🎮 Indie Game Picks</a></strong></li>
+      </ul>
+      <ul>
+        <li><a href="/" id="nav-games-link">All Games</a></li>
+        <li><a href="/about" id="nav-about-link">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero" id="hero-section">
+      <hgroup>
+        <h1>🎮 Indie Game Picks</h1>
+        <p>A student's guide to the best indie games you should play right now.</p>
+      </hgroup>
+      <p class="hero-sub">
+        Indie games are made by small teams (or even one person!) without big publisher budgets.
+        Despite that, they often have the best stories, most creative gameplay, and most heart.
+        Here are my top picks — click on any game to learn more!
+      </p>
+
+      <!-- Stretch: Search bar -->
+      <div class="search-wrap" id="search-wrap">
+        <input
+          type="search"
+          id="search-input"
+          placeholder="🔍 Search by title, genre, or developer..."
+          aria-label="Search games"
+          autocomplete="off"
+        />
+      </div>
+    </section>
+
+    <!-- Games List -->
+    <section id="games-list" class="games-list">
+      <h2 class="section-title" id="list-heading">📋 The List</h2>
+      <!-- Cards injected here by app.js -->
+      <div id="games-container">
+        <div class="loading" id="loading-spinner">
+          <span aria-busy="true">Loading games from database…</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <hr />
+    <p>Made with ❤️ for WEB103 Project 2 &middot; Member ID: 136354 &middot; Data served from PostgreSQL</p>
+  </footer>
+
+  <!-- Client-side JS -->
+  <script src="/src/api/games.js"></script>
+  <script src="/src/app.js"></script>
+</body>
+</html>

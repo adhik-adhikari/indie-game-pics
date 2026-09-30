@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Indie Game Picks — a WEB103 Project 2 listicle backed by PostgreSQL." />
+  <title>About | Indie Game Picks 🎮</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+  <link rel="stylesheet" href="/src/css/styles.css" />
+</head>
+<body>
+  <header class="container">
+    <nav>
+      <ul>
+        <li><strong><a href="/" id="nav-home-link">🎮 Indie Game Picks</a></strong></li>
+      </ul>
+      <ul>
+        <li><a href="/" id="nav-games-link">All Games</a></li>
+        <li><a href="/about" id="nav-about-link">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <article id="about-page">
+      <hgroup>
+        <h1>About This Project</h1>
+        <p>WEB103 Project 2 — Listicle Part 2</p>
+      </hgroup>
+
+      <p>
+        This web app is my submission for <strong>WEB103: Advanced Web Development</strong>
+        at CodePath (Fall 2026). Project 2 upgrades the Project 1 listicle by replacing the
+        static JavaScript data array with a real <strong>PostgreSQL database</strong> hosted on Render.
+      </p>
+
+      <h2>What Changed in Project 2</h2>
+      <ul>
+        <li>Data now lives in a <strong>PostgreSQL table on Render</strong> instead of a JS array</li>
+        <li>The backend exposes a <strong>JSON REST API</strong> (<code>/api/games</code>)</li>
+        <li>The frontend uses <strong>vanilla JS <code>fetch()</code></strong> to retrieve and display data</li>
+        <li>HTML is built <strong>client-side</strong> by <code>app.js</code> and <code>game.js</code></li>
+        <li>Added a <strong>live search</strong> feature (stretch goal)</li>
+      </ul>
+
+      <h2>Tech Stack</h2>
+      <ul>
+        <li><strong>Backend:</strong> Node.js + Express</li>
+        <li><strong>Database:</strong> PostgreSQL (hosted on Render)</li>
+        <li><strong>DB Client:</strong> <code>pg</code> (node-postgres)</li>
+        <li><strong>Frontend:</strong> Vanilla HTML + CSS + JavaScript (no framework)</li>
+        <li><strong>Styling:</strong> PicoCSS v2 + custom CSS</li>
+      </ul>
+
+      <h2>The Data Schema</h2>
+      <p>Each game in the <code>games</code> table has these columns:</p>
+      <ul>
+        <li><code>id</code> — auto-incrementing primary key</li>
+        <li><code>slug</code> — unique URL-friendly identifier</li>
+        <li><code>title</code> — game name</li>
+        <li><code>genre</code> — type of game</li>
+        <li><code>developer</code> — who made it</li>
+        <li><code>year</code> — release year</li>
+        <li><code>platform</code> — where you can play it</li>
+        <li><code>rating</code> — score out of 10</li>
+        <li><code>description</code> — full description</li>
+        <li><code>why_play</code> — personal recommendation</li>
+        <li><code>image</code> — cover art URL</li>
+      </ul>
+
+      <a href="/" role="button" id="btn-about-home">← Back to Games List</a>
+    </article>
+  </main>
+
+  <footer class="container">
+    <hr />
+    <p>Made with ❤️ for WEB103 Project 2 &middot; Member ID: 136354 &middot; Data served from PostgreSQL</p>
+  </footer>
+</body>
+</html>
